@@ -1,0 +1,9 @@
+.env
+*.sqlite3
+static/*
+app/migrations/*
+resume/migrations/*
+base/migrations/*
+app/__pycache__/*
+resume/__pycache__/*
+base/__pycache__/*

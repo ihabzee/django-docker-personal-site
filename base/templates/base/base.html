@@ -1,0 +1,67 @@
+{% load static %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 7]>
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>
+    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>
+    <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <html class="no-js"> <!--<![endif]-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Ihab Zeedia - Personal Site{% endblock %}</title>
+    <meta name="description" content="Mental Health Technology Health Transfer Network"/>
+    <meta name="keywords" content="healthcare"/>
+    <meta name="author" content="vsoch"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="icon" type="image/ico" href="/static/img/favicon.ico"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    {% block fonts %}{% endblock %}
+
+    <!-- <link rel="stylesheet" href="{% static 'css/nucleo.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/argon.min.css' %}" type="text/css">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+
+    {% block css %}{% endblock %}
+    {% block head %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        .select2-selection{
+            height: calc(1.5em + 1.25rem + 5px) !important;
+        }
+    </style>
+    {% block body %}
+        <body class="docs">
+
+        {% block nav %}{% endblock %}
+        {% block scripts %}{% endblock %}
+
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        </body>
+    {% endblock %}
+</html>

@@ -1,0 +1,4 @@
+{% for global in globals %}
+<h4>{{ global.title }}</h4>
+<p>{{ global.content|safe}}</p>
+{% endfor%}

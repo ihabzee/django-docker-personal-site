@@ -1,0 +1,11 @@
+
+{% extends "base/page.html" %}
+{% load static %}
+
+{% block content %}
+{% if globals.count > 0 %}{% include "resume/sections/global.html" %}{% endif %}
+{% if personals.count > 0 %}{% include "resume/sections/personal.html" %}{% endif %}   
+{% if educations.count > 0 %}{% include "resume/sections/education.html" %}{% endif %}   
+{% if experiances.count > 0 %}{% include "resume/sections/experiance.html" %}{% endif %}   
+{% if others.count > 0 %}{% include "resume/sections/other.html" %}{% endif %}   
+{% endblock %}

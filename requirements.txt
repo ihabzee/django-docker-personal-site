@@ -1,0 +1,15 @@
+Django
+PyMySQL
+django-extensions
+django-ratelimit
+django-gravatar2
+django-bootstrap4
+django-bootstrap-datepicker-plus
+reportlab
+sendgrid
+requests
+sentry-sdk
+django-csp
+sentry-sdk
+xhtml2pdf
+django-tinymce
