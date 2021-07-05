@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -67,6 +67,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "base.context_processors.twitter_link",
+                "base.context_processors.github_link",
+                "base.context_processors.linkedin_link",
             ],
         },
     },
@@ -77,13 +80,19 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+ 
+# Running on production App Engine, so connect to Google Cloud SQL using
+# the unix socket at /cloudsql/<your-cloudsql-connection string>
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': os.environ['MYSQL_HOST'],
+        'USER': os.environ['MYSQL_USER'],
+        'PASSWORD': os.environ['MYSQL_PASSWORD'],
+        'NAME': os.environ['MYSQL_DATABASE'],
     }
 }
+
 
 
 # Password validation
@@ -145,3 +154,7 @@ TINYMCE_DEFAULT_CONFIG = {
     "a11ycheck ltr rtl | showcomments addcomment code",
     "custom_undo_redo_levels": 10,
 }
+
+TWITTER_LINK = 'https://twitter.com/IhabZeedia'
+GITHUB_LINK = 'https://github.com/ihabzee'
+LINKEDIN_LINK = 'https://www.linkedin.com/in/ihab-zeedia'

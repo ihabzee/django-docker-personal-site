@@ -13,3 +13,4 @@ django-csp
 sentry-sdk
 xhtml2pdf
 django-tinymce
+mysqlclient
