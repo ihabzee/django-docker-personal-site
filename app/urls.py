@@ -16,14 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from django.conf.urls import handler404
+from base.admin import site
+
+admin.site = site 
+
 
 from . import views
 
-handler404 = 'base.views.handler404'
+# handler404 = 'base.views.handler404'
  
 urlpatterns = [
     path('', include('contact.urls')),
-    # path('contact/', include('contact.urls')),
+    path('contact/', include('contact.urls')),
     path('resume/', include('resume.urls')),
     path('admin/', admin.site.urls),
 ]

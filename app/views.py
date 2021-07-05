@@ -6,3 +6,6 @@ from django.http import Http404
 
 def handler404(request, exception, template_name="404.html"):
     raise Http404("Page not fount")
+
+def index(request, template_name="404.html"):
+    raise Http404("Page not fount")
