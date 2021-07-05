@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from django.conf.urls import handler404
-from base.admin import site
+# from base.admin import site
 
-admin.site = site 
+# admin.site = site 
 
 
 from . import views
