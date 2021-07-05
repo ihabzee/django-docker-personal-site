@@ -14,3 +14,4 @@ sentry-sdk
 xhtml2pdf
 django-tinymce
 mysqlclient
+django-recaptcha

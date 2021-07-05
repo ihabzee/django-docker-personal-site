@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'base.apps.BaseConfig',
+    'contact.apps.ContactConfig',
     'resume.apps.ResumeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'tinymce',
     "bootstrap4",
     "bootstrap_datepicker_plus",
+    "captcha"
 ]
 
 MIDDLEWARE = [
@@ -158,3 +160,6 @@ TINYMCE_DEFAULT_CONFIG = {
 TWITTER_LINK = 'https://twitter.com/IhabZeedia'
 GITHUB_LINK = 'https://github.com/ihabzee'
 LINKEDIN_LINK = 'https://www.linkedin.com/in/ihab-zeedia'
+
+RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
+RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']

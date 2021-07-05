@@ -22,7 +22,8 @@ from . import views
 handler404 = 'base.views.handler404'
  
 urlpatterns = [
-    path('', include('base.urls')),
+    path('', include('contact.urls')),
+    # path('contact/', include('contact.urls')),
     path('resume/', include('resume.urls')),
     path('admin/', admin.site.urls),
 ]

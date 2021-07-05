@@ -1,0 +1,10 @@
+{% extends "base/page.html" %}
+{% load static %}
+
+{% block content %}
+    <form method="POST" class="post-form" id="contact-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-primary">Send</button>
+    </form>
+{% endblock %} 

@@ -5,6 +5,8 @@ static/*
 app/migrations/*
 resume/migrations/*
 base/migrations/*
+contact/migrations/*
 app/__pycache__/*
 resume/__pycache__/*
 base/__pycache__/*
+contact/__pycache__/*

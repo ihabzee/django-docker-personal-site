@@ -56,12 +56,26 @@
 
         {% block nav %}{% endblock %}
         {% block scripts %}{% endblock %}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+                <script>
+            $( document ).ready(function() {
+                $("#contact-form").submit(function(e){
+                    e.preventDefault();
+                    if (grecaptcha != undefined && grecaptcha.getResponse() == ""){
+                        $(".message-container").addClass('show').addClass('alert-danger').removeClass('hidden').text("You Cant Proceed!")
+                    } else {
+                        console.log(2)
+                        $("#contact-form")[0].submit();
+                    }
+                })
+            });
+        </script> 
         </body>
     {% endblock %}
 </html>
