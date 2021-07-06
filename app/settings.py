@@ -72,6 +72,8 @@ TEMPLATES = [
                 "base.context_processors.twitter_link",
                 "base.context_processors.github_link",
                 "base.context_processors.linkedin_link",
+                "base.context_processors.recaptcha_public_key",
+                "base.context_processors.recaptcha_private_key",
             ],
         },
     },

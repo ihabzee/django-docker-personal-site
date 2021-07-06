@@ -2,8 +2,6 @@ from django import forms
 from django.db import models
 from .models import Contact
 from captcha.fields import ReCaptchaField
-from captcha import fields
-from captcha.widgets import ReCaptchaV3
 
 class ContactForm(forms.ModelForm):
     captcha = ReCaptchaField()

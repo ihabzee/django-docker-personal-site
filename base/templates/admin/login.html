@@ -60,9 +60,27 @@
     <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
   </div>
   {% endif %}
+  <div class="form-row">
+    <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_PUBLIC_KEY }}"></div>
+  </div>
   <div class="submit-row">
     <input type="submit" value="{% translate 'Log in' %}">
   </div>
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $( document ).ready(function() {
+        $("#login-form").submit(function(e){
+            e.preventDefault();
+            if (grecaptcha != undefined && grecaptcha.getResponse() == ""){
+                $(".message-container").addClass('show').addClass('alert-danger').removeClass('hidden').text("You Cant Proceed!")
+              } else {
+                $("#login-form")[0].submit();
+            }
+        })
+    });
+  </script> 
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+  
 </form>
 
 </div>
