@@ -5,9 +5,11 @@
 <div class="row"><h3>Selected Articles</h3></div>
     {% for article in articles %}
         <div class="card flex-row flex-wrap mt-3">
+            {% if article.image_url != ''  %}
             <div class="card-header border-0 col-3">
                 <img class="img-fluid" src="{{article.image_url}}" alt="">
             </div>
+            {% endif %}
             <div class="card-block px-2 ml-3  mt-3 col-8">
                 <h4 class="card-title">{{article.title}}</h4>
                 <p class="card-text">{{article.description}}</p> 
