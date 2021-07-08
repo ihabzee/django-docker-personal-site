@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'article.apps.ArticleConfig',
     'base.apps.BaseConfig',
     'contact.apps.ContactConfig',
     'resume.apps.ResumeConfig',

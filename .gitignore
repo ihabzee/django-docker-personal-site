@@ -10,3 +10,6 @@ app/__pycache__/*
 resume/__pycache__/*
 base/__pycache__/*
 contact/__pycache__/*
+contact/migrations/*
+article/__pycache__/*
+article/migrations/*

@@ -34,9 +34,3 @@ class Section(models.Model):
     created_at = models.DateTimeField("date of creation", auto_now_add=True)
 
     updated_at = models.DateTimeField("date of last update", auto_now=True)
-
-    @property
-    def uuid(self):
-        """Derive a unique id from the center name"""
-        if self.title is not None:
-            return self.title.lower().replace(" ", "-")

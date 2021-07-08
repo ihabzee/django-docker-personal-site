@@ -6,4 +6,4 @@ from resume.models import *
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
     search_fields = ['uuid', 'title', 'type']
-    list_display = ['uuid', 'title', 'type']
+    list_display = [ 'title', 'type']
