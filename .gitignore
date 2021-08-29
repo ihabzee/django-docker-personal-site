@@ -13,3 +13,4 @@ contact/__pycache__/*
 contact/migrations/*
 article/__pycache__/*
 article/migrations/*
+.DS_Store
