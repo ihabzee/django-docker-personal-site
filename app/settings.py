@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'contact.apps.ContactConfig',
     'resume.apps.ResumeConfig',
+    'vue_app.apps.VueAppConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,9 +1,24 @@
 version: "3.9"
    
 services:
+  frontend:
+    build:
+        context: vueapp
+    restart: always
+    stdin_open: true
+    environment:
+        - CHOKIDAR_USEPOLLING=true
+    links:
+        - "web:web"
+    ports:
+        - "80:8080" 
+    volumes:
+        - './vueapp:/app:delegated'
+        # - '/frontend/node_modulesc'
+        - '/app/node_modules'
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:80
+    command: python manage.py runserver 0.0.0.0:8000
     env_file:
         - ./.env
     depends_on:
@@ -11,7 +26,7 @@ services:
     volumes:
       - .:/code
     ports:
-      - "80:80"
+      - "8000:8000"
   db:
     image: mysql:latest
     env_file:

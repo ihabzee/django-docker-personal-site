@@ -30,5 +30,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('articles/', include('article.urls')),
     path('resume/', include('resume.urls')),
+    path('vue/', include('vue_app.urls')),
     path('admin/', admin.site.urls),
 ]
