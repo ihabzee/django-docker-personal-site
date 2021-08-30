@@ -1,6 +1,8 @@
 # pull official base image
 FROM node:13.12.0-alpine
 
+ARG VUE_APP_BACKEND_URL                        
+ENV VUE_APP_BACKEND_URL=$VUE_APP_BACKEND_URL   
 # set working directory
 WORKDIR /app
 
