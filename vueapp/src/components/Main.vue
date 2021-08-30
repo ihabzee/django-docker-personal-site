@@ -9,10 +9,12 @@
 
       <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item ><router-link to="/">Home</router-link></b-nav-item>
-          <b-nav-item  ><router-link to="/resume">Resume</router-link></b-nav-item>
-          <b-nav-item ><router-link to="/contact-me">Contact Me</router-link></b-nav-item>
+          <b-nav-item ><router-link tag="li" active-class="active" to="/">Home</router-link></b-nav-item>
+          <b-nav-item  ><router-link tag="li" active-class="active" to="/resume">Resume</router-link></b-nav-item>
+          <b-nav-item ><router-link tag="li" active-class="active" to="/contact-me">Contact Me</router-link></b-nav-item>
         </b-navbar-nav>
+      </b-collapse>
+      <!-- <b-collapse id="nav-text-collapse" is-nav class="pull-right ml-auto"> -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item right href="home"
             ><svg
@@ -54,7 +56,7 @@
               /></svg
           ></b-nav-item>
         </b-navbar-nav>
-      </b-collapse>
+      <!-- </b-collapse> -->
     </b-navbar> </b-container>
   </div>
 </template>

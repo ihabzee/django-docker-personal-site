@@ -24,7 +24,7 @@
           </b-card>
         </div>
       </div>
-      <div v-else>No Articles found</div>
+      <!-- <div v-else>No Articles found</div> -->
     </b-container>
   </div>
 </template>
@@ -48,8 +48,7 @@ export default {
             "Content-type": "application/json",
           },
         })
-        .then((response) => {
-          console.log(response.data);
+        .then((response) => { 
           this.articles = response.data;
         });
     },
