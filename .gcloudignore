@@ -17,3 +17,7 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+vueapp/node_modules/
+.git
+.gitignore
+docker-compose.yaml
