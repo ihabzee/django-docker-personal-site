@@ -1,6 +1,8 @@
 // vue.config.js
+const path = require('path'); 
+
 module.exports = {
-    // options...
+    // options... 
     devServer: {
         proxy: {
             '/api/*': {
@@ -8,6 +10,7 @@ module.exports = {
                 "secure": false
             },
         },
-    }
-  }
-  
+    },
+      // outputDir must be added to Django's TEMPLATE_DIRS
+  outputDir: '../dist/vue/', 
+}
