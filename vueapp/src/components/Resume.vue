@@ -2,7 +2,9 @@
   <div>
     <b-container class="mt-4">
       <div v-for="section in sections" :key="section.id">
-        <p v-html="section.content"></p>
+        <b-row>
+          <p style="text-align:left" v-html="section.content"></p>
+        </b-row>
       </div>
   </b-container>
   </div>

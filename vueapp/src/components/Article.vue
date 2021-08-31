@@ -3,7 +3,7 @@
     <b-container class="mt-4">
       <div v-if="articles.length > 0">
         <div v-for="article in articles" :key="article.uuid">
-          <b-card no-body class="overflow-hidden"  >
+          <b-card no-body class="overflow-hidden mt-4 w-100"  >
             <b-row no-gutters>
               <b-col md="4">
                 <b-card-img
