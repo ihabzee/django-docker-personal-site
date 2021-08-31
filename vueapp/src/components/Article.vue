@@ -6,21 +6,21 @@
           <b-card no-body class="overflow-hidden mt-4 w-100"  >
             <b-row no-gutters>
               <b-col md="4">
-                <b-card-img
+                <b-card-img v-if="article.image_url != ''"
                   :src="article.image_url"
                   :alt="article.title"
                   class="rounded-0"
                 ></b-card-img>
               </b-col>
               <b-col md="8">
-                <b-card-body   :title="article.title">
-                  <b-card-text>
+                <b-card-body style="text-align: left"  :title="article.title">
+                  <b-card-text style="text-align: left">
                     {{article.description}}
                   </b-card-text>
                 </b-card-body>
+                <b-row ><b-link  :href="article.url" class="card-link" style="text-align: left">Read Full Article</b-link></b-row>
               </b-col>
-            </b-row>
-            <b-row><b-link :href="article.url" class="card-link">Read Full Article</b-link></b-row>
+            </b-row> 
           </b-card>
         </div>
       </div>
