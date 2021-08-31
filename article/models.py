@@ -4,7 +4,7 @@ import uuid
 
 class Article(models.Model):
 
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
 
     title = models.CharField(max_length=500, null=False, blank=True)
 

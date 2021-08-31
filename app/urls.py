@@ -13,23 +13,36 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include,path
 from django.conf.urls import handler404
 from base.admin import MyAdminSite, site
-
+from article.api import ArticleViewSet
+from resume.api import SectionViewSet
+from contact.api import ContactViewSet
+from rest_framework import routers
 admin.site.__class__ = MyAdminSite
 
 
 from . import views
-
+router = routers.DefaultRouter()
+router.register(r'articles', ArticleViewSet)
+router.register(r'sections', SectionViewSet)
+router.register(r'contact-me', ContactViewSet)
 # handler404 = 'base.views.handler404'
  
 urlpatterns = [
-    path('', include('article.urls')),
+    # path('', include('article.urls')),
     path('contact/', include('contact.urls')),
     path('articles/', include('article.urls')),
     path('resume/', include('resume.urls')),
-    path('vue/', include('vue_app.urls')),
+    path('', include('vue_app.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
+
+
+# for serving static files
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

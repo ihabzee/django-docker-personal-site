@@ -16,3 +16,5 @@ django-tinymce
 mysqlclient
 django-recaptcha
 gunicorn
+djangorestframework
+django-cors-headers

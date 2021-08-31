@@ -4,6 +4,8 @@ services:
   frontend:
     build:
         context: vueapp
+        args:
+          - VUE_APP_BACKEND_URL=web
     restart: always
     stdin_open: true
     environment:
