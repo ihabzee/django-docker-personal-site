@@ -35,10 +35,12 @@ router.register(r'contact-me', ContactViewSet)
  
 urlpatterns = [
     # path('', include('article.urls')),
-    path('contact/', include('contact.urls')),
-    path('articles/', include('article.urls')),
-    path('resume/', include('resume.urls')),
-    path('', include('vue_app.urls')),
+    # path('contact/', include('contact.urls')),
+    # path('articles/', include('article.urls')),
+    # path('resume/', include('resume.urls')),
+    path('', include('vue_app.urls')), 
+    path('contact-me', include('vue_app.urls')),
+    path('resume', include('vue_app.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]

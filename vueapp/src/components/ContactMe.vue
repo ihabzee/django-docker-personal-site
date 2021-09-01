@@ -1,7 +1,9 @@
 <template>
   <div>
     <b-container>
-      <b-alert v-if="showAlert" variant="alertVariant">{{alertMessage}}</b-alert>
+      <b-alert :variant="variant" dismissible fade :show="showDismissibleAlert">
+        {{ alertMessage }}
+      </b-alert>
       <b-form @submit="onSubmit" @reset="onReset">
         <b-form-group
           id="input-group-1"
@@ -73,9 +75,9 @@ export default {
   data() {
     return {
       canSubmit: true,
-      showAlert: false,
-      alertVariant: 'danger',
-      alertMessage :'',
+      showDismissibleAlert: false,
+      alertVariant: "danger",
+      alertMessage: "",
       form: {
         email: "",
         subject: "",
@@ -97,18 +99,21 @@ export default {
     },
     onSubmit(event) {
       console.log(this.$refs.invisibleRecaptcha.execute());
-      axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-      axios.defaults.xsrfCookieName = "csrftoken"
+      axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+      axios.defaults.xsrfCookieName = "csrftoken";
       axios
-        .post("/api/contact-me/", this.form,{
+        .post("/api/contact-me/", this.form, {
           headers: {
             "Content-type": "application/json",
           },
         })
         .then((response) => {
-          this.sections = response.data;
+          this.response = response.data
+          this.alertVariant = "success"
+          this.alertMessage = "I received your message and I will reply as soon as possible."
+          this.showDismissibleAlert = true
         });
-        event.preventDefault();
+      event.preventDefault();
     },
     onReset(event) {
       event.preventDefault();

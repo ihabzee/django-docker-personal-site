@@ -10,7 +10,6 @@ sendgrid
 requests
 sentry-sdk
 django-csp
-sentry-sdk
 xhtml2pdf
 django-tinymce
 mysqlclient
@@ -18,3 +17,4 @@ django-recaptcha
 gunicorn
 djangorestframework
 django-cors-headers
+sendgrid

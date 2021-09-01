@@ -11,7 +11,7 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer):
 
 # ViewSets define the view behavior.
 class ArticleViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.filter(active=True)
+    queryset = Article.objects.filter(active=True).order_by('-created_at')
     serializer_class = ArticleSerializer
 
         # use pass to prevent deleting the record
