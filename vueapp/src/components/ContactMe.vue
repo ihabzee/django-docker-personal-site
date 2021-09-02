@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-container>
-      <b-alert :variant="variant" dismissible fade :show="showDismissibleAlert">
+      <b-alert :variant="alertVariant" dismissible fade :show="showDismissibleAlert">
         {{ alertMessage }}
       </b-alert>
       <b-form @submit="onSubmit" @reset="onReset">

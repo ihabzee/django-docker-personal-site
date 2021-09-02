@@ -18,7 +18,7 @@
                     {{article.description}}
                   </b-card-text>
                 </b-card-body>
-                <b-row ><b-link  :href="article.url" class="card-link" style="text-align: left">Read Full Article</b-link></b-row>
+                <b-row ><b-col md="4"><b-link  :href="article.url" class="card-link" style="text-align: left">Read Full Article</b-link></b-col></b-row>
               </b-col>
             </b-row> 
           </b-card>
