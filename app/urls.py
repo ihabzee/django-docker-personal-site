@@ -23,6 +23,8 @@ from article.api import ArticleViewSet
 from resume.api import SectionViewSet
 from contact.api import ContactViewSet
 from rest_framework import routers
+from django.views.generic import RedirectView
+
 admin.site.__class__ = MyAdminSite
 
 
@@ -35,9 +37,9 @@ router.register(r'contact-me', ContactViewSet)
  
 urlpatterns = [
     # path('', include('article.urls')),
-    # path('contact/', include('contact.urls')),
-    # path('articles/', include('article.urls')),
-    # path('resume/', include('resume.urls')),
+    path('contact/', RedirectView.as_view(url='/contact-me')),
+    path('articles/', RedirectView.as_view(url='/articles')),
+    path('resume/', RedirectView.as_view(url='/resume')),
     path('', include('vue_app.urls')), 
     path('contact-me', include('vue_app.urls')),
     path('resume', include('vue_app.urls')),
