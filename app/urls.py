@@ -26,7 +26,7 @@ from rest_framework import routers
 from django.views.generic import RedirectView
 
 admin.site.__class__ = MyAdminSite
-
+ 
 
 from . import views
 router = routers.DefaultRouter()

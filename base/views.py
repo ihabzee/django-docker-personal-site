@@ -16,5 +16,8 @@ def index(request):
         form = ModifiedForm()
     return render('admin/login.html',{'form':ModifiedForm})
 
-def handler404(request):
-    return 1
+def handler404(request, exception):
+    response = render(request, "base/404.html", {})
+    response.status_code = 404
+    return response
+
