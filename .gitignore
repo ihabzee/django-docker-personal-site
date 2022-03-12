@@ -13,4 +13,6 @@ contact/__pycache__/*
 contact/migrations/*
 article/__pycache__/*
 article/migrations/*
+vue_app/__pycache__/*
+vue_app/migrations/*
 .DS_Store
